@@ -15,13 +15,20 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
+                    'postcss-loader',
                     'less-loader'
                 ],
+            },
+            {
+                test: /\.(jpg|png)$/,
+                use: {
+                    loader: 'url-loader',
+                },
             },
         ]
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx']
+        extensions: ['*', '.js', '.jsx', '.png']
     },
     plugins: [
         new HtmlWebPackPlugin({
